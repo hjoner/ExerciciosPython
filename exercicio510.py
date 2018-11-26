@@ -28,6 +28,6 @@ while questao <= 3:
 
 
 #Saída de dados
-print("O aluno fez %d ponto(s)" % pontos)
+print("O aluno fez %d ponto(s)!" % pontos)
 
 
