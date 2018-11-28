@@ -44,14 +44,19 @@ jurostotal = 0
 
 #Processamento de dados
 
-while n <= (divida + saldo)/parcela :
-    juros = (saldo * taxa/100)
-    jurostotal = jurostotal + juros
-    saldo = saldo + juros - parcela
-    n = n + 1
-    amortizacao = divida - (saldo - jurostotal)
-    print("Após o pagamento da parcela relativa ao %dº mês você já pagou R$ %5.2f referente à amortização, o saldo a ser quitado é de R$  %5.2f!" % (n, amortizacao, saldo))
+if (parcela < divida * (taxa/100)):
+    print("Sua dívida é impagável mané!")
+
+else:
+
+    while n <= (divida + saldo)/parcela :
+        juros = (saldo * taxa/100)
+        jurostotal = jurostotal + juros
+        saldo = saldo + juros - parcela
+        n = n + 1
+        amortizacao = divida - (saldo - jurostotal)
+        print("Após o pagamento da parcela relativa ao %dº mês você já pagou R$ %5.2f referente à amortização, o saldo a ser quitado é de R$  %5.2f!" % (n, amortizacao, saldo))
 
 #Saída de dados
-print("Você levará %d meses para quitar sua dívida e o total de juros que você pagará é de R$ %5.2f" % (n, jurostotal))
+    print("Você levará %d meses para quitar sua dívida e o total de juros que você pagará é de R$ %5.2f" % (n, jurostotal))
 
