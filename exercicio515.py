@@ -9,6 +9,7 @@ Data:27/11/2018
 
 #Inicialização de variáveis
 
+
 a = 0.5
 
 b = 1
