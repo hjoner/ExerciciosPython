@@ -27,7 +27,7 @@ else:
     while x < numero:
         if numero % x == 0:
             break
-        x = x + 2
+        x += 2
     if numero == x:
 #Saída de dados        
             print("Você escolheu o número %d, este número é primo!" % numero)
