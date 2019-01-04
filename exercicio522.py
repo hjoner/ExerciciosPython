@@ -16,21 +16,19 @@ tabuada = 0
 
 #Entrada de dados
 
-while True:
-    
-    operacao = input("Informe a operação desejada: adição (+), subtração (-), divisão (/), multiplicação (*) ou tecle sair para encerrar. ")
-
-    x = 1
-    
-    if operacao == "sair" or "SAIR":
-        break
-        
+while True: 
+    operacao1 = input("Informe a operação desejada: adição (+), subtração (-), divisão (/), multiplicação (*) ou tecle sair para encerrar. ")
+    operacao = operacao1.lower()
+#Processamento de dados   
+    if operacao == "sair":
+        print("Você saiu!")
+        break        
     elif operacao != "+" or "-" or "/" or "*":
         print("Você escolheu a operação %s" % operacao)
         tabuada = int(input("Digite o número que deseja obter a tabuada "))
-        X = 1
+        x = 1
         
-#Processamento de dados        
+#Saída      
         while x<=10:
             
             if operacao == "+":
@@ -44,7 +42,3 @@ while True:
             x += 1
     else:
         print("Erro! Você deve escolher uma opção válida!")
-
-
-#Saída de dados
-
