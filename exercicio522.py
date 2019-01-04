@@ -1,5 +1,5 @@
 """
-Descrição: Este programa demonstra as operações informadas pelo usuário.
+Descrição: Este programa demonstra as operações solicitadas pelo usuário.
 Autor:Henrique Joner
 Versão:0.0.1
 Data:01/12/2018
@@ -22,10 +22,11 @@ while True:
 
     x = 1
     
-    if operacao == "sair":
+    if operacao == "sair" or "SAIR":
         break
         
     elif operacao != "+" or "-" or "/" or "*":
+        print("Você escolheu a operação %s" % operacao)
         tabuada = int(input("Digite o número que deseja obter a tabuada "))
         X = 1
         
