@@ -50,7 +50,7 @@ dados1 = []
 x=0
 while x < len(dados):
     y = 0
-    while y < len(dados1)
+    while y < len(dados1):
         if dados[x] == dados1[y]:
             break
         y += 1
@@ -58,19 +58,9 @@ while x < len(dados):
         dados1.append(dados[x])
     x += 1
     
-x = 0
-
-while x < len(dados1):
-    print(dados1)
-    x += 1
-        
-
 
 #Saída de dados
-print("Os dados da primeira lista são:")
-print(produto1)
-print("Os dados da segunda lista são: ")
-print(produto2)
-print("Os dados foram armazenados da seguinte forma:" )
+print("Lista completa: ")
 print(dados)
-
+print("lista sem repetições: ")
+print(dados1)
