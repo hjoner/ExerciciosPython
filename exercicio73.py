@@ -15,7 +15,7 @@ p=0
 #Entrada de dados
 
 primeira = input("Digite uma frase: ")
-segunda = input("Digite uma expressão para pesquisar na frase anterior: ")
+segunda = input("Digite uma expressão para comparar com a frase anterior: ")
 
 #Processamento de dados
 
