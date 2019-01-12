@@ -2,7 +2,7 @@
 Descrição: Modelo de Jogo da Velha
 Autor:Henrique Joner
 Versão:0.0.1
-Data:03/01/2019
+Data:12/01/2019
 """
 
 #Inicialização de variáveis
@@ -10,19 +10,9 @@ Data:03/01/2019
 
 
 
-#Entrada de dados
-
-
-#Processamento de dados
-
-
-
-#Saída de dados
-
-
 
 print("""         *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
-         |   Instrução: Após escolher se deseja jogar com Xis ou Bola,               |
+         |   Instrução: Após escolher se deseja jogar com Xis (X) ou Bola (O),               |
          |  você deverá escolher um número, que será substituído pelo item escolhido!|
          *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*   """)
 print(""" Exemplo:        +-----+-----+-----+                 
@@ -36,8 +26,8 @@ print(""" Exemplo:        +-----+-----+-----+
 print("OK??")
 continuar = input("Tecle S para continuar... ").upper()
 fim = False
-
-
+z = 0
+vezantiga = "PRÓXIMO!"
 if continuar == "S":
     print("OK!")
     continua = True
@@ -50,6 +40,9 @@ else:
     else:
         print("Você saiu!")
         continua = False
+
+        
+#Entrada de dados
 
 if continua:
     nome1 = input("Digite o nome do jogador 1: ").upper()
@@ -108,15 +101,17 @@ if continua:
         print("|                                                     |")
         print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
 
-        
+       
     while not fim:
-        saldo = []
-        saldo2 = []
+  
+        linhajogador = list("|                  JOGADOR DA VEZ:                  |")
+        linhajogador[35] = vezantiga
+        linhajogador1 = "".join(linhajogador)
+        del linhajogador[53-len(vezantiga):50]
+        linhajogador1 = "".join(linhajogador)
+        
         x = input("É sua vez %s escolha uma posição: " % vez)
-        if vez == nome1:
-            saldo = saldo.append([x])
-        if vez == nome2:
-            saldo2 = saldo2.append([x])
+
         if vez == nome1:
             y = jogador
         if vez == nome2:
@@ -143,6 +138,7 @@ if continua:
         linha99 = "".join(linha9)
         linha111 = "".join(linha11)
         linha133 = "".join(linha13)
+
         
         print("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|")
         print("|                   JOGO DA VELHA                     |")
@@ -167,6 +163,14 @@ if continua:
         else:
             vez = nome2
             vezantiga = nome1
+        
+        
+        if z > 8:
+            print("Acabou! Ninguém venceu!")
+            break
+        z += 1
+#Processamento de dados
+
         #VITÓRIA EM LINHAS    
         if linha99[19] == "X" and linha99[25] == "X" and linha99[31] == "X":
             fim = True
@@ -202,10 +206,12 @@ if continua:
             fim = True
         if linha99[31] == "X" and linha11[31] == "X" and linha13[31] == "X":       
             fim = True
-        
+      
+ #Saída de dados        
         if fim:
             print("*~~~~~~~~~~~~~~~~~~~*")
             print("|  É o fim! ACABOU! |")
             print("   %s VENCEU!   " % vezantiga)
+            print("|    ¯\_(ツ)_/¯     |")
             print("*~~~~~~~~~~~~~~~~~~~*")
             break
